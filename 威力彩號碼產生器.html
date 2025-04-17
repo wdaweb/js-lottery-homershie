@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>威力彩號碼產生器</title>
+  </head>
+  <body>
+    <script>
+      //威力彩號碼產生器
+      const getPower1 = (min, max) => {
+        let numbersArr = [];
+        while (numbersArr.length < 6) {
+          let currentNum = Math.floor(Math.random() * (max - min + 1) + min);
+          if (!numbersArr.includes(currentNum)) {
+            numbersArr.push(currentNum);
+          }
+        }
+        document.write(
+          `A區${min}到${max}，選中的6個數字是： ${numbersArr.join(", ")}<br>`
+        );
+      };
+      const getPower2 = (min, max) => {
+        let num = Math.floor(Math.random() * (max - min + 1) + min);
+        document.write(`B區${min}到${max}，選中的1個數字是： ${num}<br>`);
+      };
+
+      getPower1(1, 38);
+      getPower2(1, 8);
+    </script>
+  </body>
+</html>
